@@ -2,19 +2,27 @@
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
+    screens: {
+      mobile: '375px',
+      desktop: '1440px',
+    },
     colors: {
       primary: {
         red: {
           light: 'hsl(0, 100%, 67%)',
+          trans: 'hsla(0, 100%, 67%, 14%)',
         },
         orangey: {
           yellow: 'hsl(39, 100%, 56%)',
+          trans: 'hsla(39, 100%, 56%, 14%)',
         },
         green: {
           teal: 'hsl(166, 100%, 37%)',
+          trans: 'hsla(166, 100%, 37%, 14%)',
         },
         cobalt: {
           blue: 'hsl(234, 85%, 45%)',
+          trans: 'hsla(234, 85%, 45%, 14%)',
         },
       },
       neutral: {
@@ -42,7 +50,24 @@ module.exports = {
         },
       },
     },
-    extend: {},
+    fontFamily: {
+      sans: ['Hanken Grotesk', 'sans-serif'],
+    },
+    extend: {
+      gridTemplateColumns: {
+        section: 'repeat(2, 1fr)',
+        leftComponent: 'max-content 1fr max-content',
+        itemRight: 'max-content 1fr max-content',
+        'repeat-3-max': 'repeat(3, max-content)',
+      },
+      gridTemplateRows: {
+        leftComponent: 'max-content 1fr max-content',
+        circle: '1fr max-content',
+        footer: 'max-content 1fr',
+        rightComponent: 'max-content 1fr max-content',
+        rightContainer: 'repeat(4, max-content)',
+      },
+    },
   },
   plugins: [],
 };
